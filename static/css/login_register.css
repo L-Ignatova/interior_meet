@@ -1,0 +1,34 @@
+.form {
+    margin: 20px auto;
+    width: 300px;
+    
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.form > h1 {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.form > p {
+    margin-bottom: 50px;
+}
+.form > p > a {
+    text-decoration: underline;
+    color: rgb(133, 130, 130);
+}
+
+.form > form > label {
+    margin-bottom: 5px;
+}
+.form > form > input,
+.form > form > select,
+.form > form > button,
+.form > form > textarea {
+    margin-bottom: 10px;
+}
+.form > form > button {
+    padding: 10px;
+}

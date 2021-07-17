@@ -1,0 +1,56 @@
+@media all and (max-width: 700px) {
+
+    nav, footer, .home-intro, main {
+        font-size: 12px;
+    }
+    img#home-page-background {
+        min-height: 100vh;
+    }
+    .project-details {
+        flex-direction: column;
+    }
+    
+    header> nav > ul>li {
+        padding: 3px;
+    }
+    .dropdown-menu,
+    .drop {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .active {
+        display: flex;
+    }
+    .non-active {
+        display: none;
+    }
+    .drop>li {
+        padding: 0;
+        margin: 0;
+    }
+    .icon-menu {
+        display: inline-block;
+    }
+    
+
+    .home-intro {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    article.comment,
+    .profile-info,
+    .profile-intro,
+    .project-details-info {
+        width: 80%;
+    }
+    .project-details-info {
+        align-items: center;
+    }
+    .project-details-info > p {
+        text-align: center;
+    }
+    .project-comments-section {
+        padding: 0;
+    }
+
+}

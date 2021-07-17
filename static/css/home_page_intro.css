@@ -1,0 +1,17 @@
+.home-intro {
+    max-width: 600px;
+    margin: 50px;
+    padding: 30px;
+
+    background-color: rgb(255,255,255,0.8);
+    border-radius: 10px;
+}
+.home-intro-heading {
+    font-size: 3em;
+    margin: .3em 0;
+    font-weight:300;
+}
+.home-intro-description {
+    margin: 0;
+    padding: .2em 0;
+}

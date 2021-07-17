@@ -1,0 +1,29 @@
+.profile-info,
+.profile-intro {
+    margin: 20px auto;
+    width: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-intro {
+    text-align: center;
+    flex-direction: column;
+}
+.profile-info > img {
+    width: 150px;
+}
+.profile-details > *,
+.profile-intro > * {
+    margin: 5px 20px;
+}
+.profile-details > h3,
+.profile-intro > h3 {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+.profile-details > h5 {
+    font-size: 1.2em;
+    font-weight: 300;
+}

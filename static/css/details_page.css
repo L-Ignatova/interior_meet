@@ -1,0 +1,73 @@
+.project-details {
+    margin: 2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.project-details-image {
+    width: 65%;
+}
+.project-details-image > img {
+    width: 100%;
+}
+.project-details-info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.project-details-info > ul{
+    padding: 0;
+}
+.project-details-info > ul > li {
+    list-style: none;
+    margin: 10px 0;
+}
+.project-details-info > ul > li > a {
+    text-decoration: underline;
+}
+.project-details-title {
+    font-size: 2em;
+    font-weight: 300;
+
+    margin: 20px 0 0 0;
+}
+.project-details-info > p {
+    margin-top: 0;
+    font-size: 0.9em;
+}
+
+.project-comments-section {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+form > input[type=submit] {
+    width: max-content;
+}
+
+article.comment {
+    margin: 10px 0;
+    padding: 0 10px;
+    background-color: rgb(228, 228, 228);
+
+    border-radius: 10px;
+    width: 70%;
+}
+.comment-name {
+    font-weight: 600;
+}
+
+.like-btn {
+    border: none;
+    background: transparent;
+    padding: 0 10px;
+}
+.like-btn:hover {
+    cursor:pointer;
+}
