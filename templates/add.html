@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porject Demo</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./home_page.html">Home</a></li>
+            </ul>
+
+            <ul class="dropdown-menu">
+                <li><button class="icon-menu"><i class="fas fa-bars"></i></button>
+                <li><ul class="drop non-active">
+                    <li><a href="./catalogue.html">Catalogue</a></li>
+                    <li><a href="./add.html">Add project</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                    <li><a href="./profile.html">Profile</a></li>
+                </ul></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="form">
+            <h1>Create project</h1>
+            <form action="">
+                <label for="name">Project title</label>
+                <input type="text" name="name" id="name">
+                <label for="city">Location</label>
+                <input type="text" name="city" id="city" placeholder="City, country">
+                
+                <label for="intro">Short description</label>
+                <textarea type="text" name="intro" id="intro" rows="4"></textarea>
+                
+                <label for="image">Upload image</label>
+                <input type="file" name="image" id="image">
+                <button type="submit" class="btn">Create</button>
+            </form>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <p>
+            &copy; SoftUni.bg | Liliya Ignatova
+        </p>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fab fa-github-square"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        let menuBtn = document.getElementsByClassName('icon-menu')[0].getElementsByTagName("I")[0];
+        let menu = document.getElementsByClassName('drop')[0];
+        
+        menuBtn.addEventListener("click", (e) => {
+            if (menuBtn.classList.contains('fa-bars')) {
+                menuBtn.classList.remove('fa-bars');
+                menuBtn.classList.add('fa-times');
+
+                menu.classList.remove('non-active');
+                menu.classList.add('active');
+            }
+            else {
+                menuBtn.classList.add('fa-bars');
+                menuBtn.classList.remove('fa-times');
+
+                menu.classList.remove('active');
+                menu.classList.add('non-active');
+            }
+        });
+
+    </script>
+</body>
+</html>
