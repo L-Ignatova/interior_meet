@@ -1,67 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porject Demo</title>
-    <link rel="stylesheet" href="./static/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-</head>
-<body>
-    <img id="home-page-background" src="./static/images/pexels-andrew-neel-7932264.jpg" alt="">
-    <header>
-        <nav>
-            <ul>
-                <li><a href="./home_page.html">Home</a></li>
-            </ul>
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block index_image %}
+    <img id="home-page-background" src="{% static 'images/pexels-andrew-neel-7932264.jpg' %}" alt="">
+{% endblock %}
 
-            <ul class="dropdown-menu">
-                <li><button class="icon-menu"><i class="fas fa-bars"></i></button>
-                <li><ul class="drop non-active">
-                    <li><a href="./catalogue.html">Catalogue</a></li>
-                    <li><a href="./add.html">Add project</a></li>
-                    <li><a href="./login.html">Login</a></li>
-                    <li><a href="./profile.html">Profile</a></li>
-                </ul></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <article class="home-intro">
-            <h1 class="home-intro-heading">
-                Interior House
-            </h1>
-            <p class="home-intro-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reiciendis a doloribus possimus ut quisquam autem, illo, reprehenderit veritatis tempora iure blanditiis, ipsam cum. Aliquam ullam obcaecati debitis id culpa?
-                Porro beatae architecto dolor officiis obcaecati ipsum repellat, accusamus fuga reiciendis assumenda eveniet unde veniam harum laboriosam at. Laboriosam molestiae architecto soluta dignissimos possimus? Quibusd
-            </p>
-            <button class="btn"><a href="./catalogue.html">See projects</a></button>
-        </article>
-    </main>
-    
-    <script>
-        let menuBtn = document.getElementsByClassName('icon-menu')[0].getElementsByTagName("I")[0];
-        let menu = document.getElementsByClassName('drop')[0];
-        
-        menuBtn.addEventListener("click", (e) => {
-            if (menuBtn.classList.contains('fa-bars')) {
-                menuBtn.classList.remove('fa-bars');
-                menuBtn.classList.add('fa-times');
-
-                menu.classList.remove('non-active');
-                menu.classList.add('active');
-            }
-            else {
-                menuBtn.classList.add('fa-bars');
-                menuBtn.classList.remove('fa-times');
-
-                menu.classList.remove('active');
-                menu.classList.add('non-active');
-            }
-        });
-
-    </script>
-</body>
-</html>
+{% block content %}
+    <article class="home-intro">
+        <h1 class="home-intro-heading">
+            Interior House
+        </h1>
+        <p class="home-intro-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reiciendis a doloribus possimus ut quisquam autem, illo, reprehenderit veritatis tempora iure blanditiis, ipsam cum. Aliquam ullam obcaecati debitis id culpa?
+            Porro beatae architecto dolor officiis obcaecati ipsum repellat, accusamus fuga reiciendis assumenda eveniet unde veniam harum laboriosam at. Laboriosam molestiae architecto soluta dignissimos possimus? Quibusd
+        </p>
+        <button class="btn"><a href="./catalogue.html">See projects</a></button>
+    </article>
+{% endblock %}
+{% block footer %} {% endblock %}

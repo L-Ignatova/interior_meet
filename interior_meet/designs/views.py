@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+# temporary
+def landing_page(req):
+    return render(req, 'home_page.html')
+
+
+# temporary
+def add_page(req):
+    return render(req, 'add.html')
