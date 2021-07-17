@@ -1,123 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porject Demo</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-</head>
-<body>
-    <header>
-        <nav>
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <section class="project-details">
+        <div class="project-details-image">
+            <img src="./static/images/pexels-vecislavas-popa-1571460.jpg" alt="project image">
+        </div>
+        <div class="project-details-info">
+            <h3 class="project-details-title">
+                Project title
+            </h3>
             <ul>
-                <li><a href="./home_page.html">Home</a></li>
+                <li>Creator: <a href="#">John Smith</a></li>
+                <li>Location: Sofia, Bulgaria</li>
+                <li>Likes: 20 <button type="submit" class="like-btn"><i class="far fa-heart"></i><i class="fas fa-heart" style="display: none;"></i></button></li>
             </ul>
-
-            <ul class="dropdown-menu">
-                <li><button class="icon-menu"><i class="fas fa-bars"></i></button>
-                <li><ul class="drop non-active">
-                    <li><a href="./catalogue.html">Catalogue</a></li>
-                    <li><a href="./add.html">Add project</a></li>
-                    <li><a href="./login.html">Login</a></li>
-                    <li><a href="./profile.html">Profile</a></li>
-                </ul></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="project-details">
-            <div class="project-details-image">
-                <img src="./static/images/pexels-vecislavas-popa-1571460.jpg" alt="project image">
-            </div>
-            <div class="project-details-info">
-                <h3 class="project-details-title">
-                    Project title
-                </h3>
-                <ul>
-                    <li>Creator: <a href="#">John Smith</a></li>
-                    <li>Location: Sofia, Bulgaria</li>
-                    <li>Likes: 20 <button type="submit" class="like-btn"><i class="far fa-heart"></i><i class="fas fa-heart" style="display: none;"></i></button></li>
-                </ul>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio quo fugiat corrupti pariatur, explicabo nemo perspiciatis sunt voluptatibus quae quos sed optio? Repudiandae aliquam, quasi corporis exercitationem molestiae quisquam cum!</p>
-                <section class="button-controls">
-                    <button class="btn"><a href="./edit.html">
-                        Edit
-                    </a></button>
-                    <button class="btn"><a href="#">
-                        Delete
-                    </a></button>
-                </section>
-            </div>
-        </section>
-        <section class="project-comments-section">
-            <form action="#" method="post">
-                <label for="comment">Add a comment</label>
-                <textarea name="comment" id="comment-text" rows="2"></textarea>
-                <input type="submit" value="Submit comment" class="btn">
-            </form>
-            <article class="comment">
-                <p class="comment-name">
-                    John Smith
-                </p>
-                <p class="comment-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
-                </p>
-            </article>
-            <article class="comment">
-                <p class="comment-name">
-                    John Smith
-                </p>
-                <p class="comment-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
-                </p>
-            </article>
-            <article class="comment">
-                <p class="comment-name">
-                    John Smith
-                </p>
-                <p class="comment-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
-                </p>
-            </article>
-        </section>
-    </main>
-    
-    <hr>
-    <footer>
-        <p>
-            &copy; SoftUni.bg | Liliya Ignatova
-        </p>
-        <ul>
-            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fab fa-github-square"></i></a></li>
-        </ul>
-    </footer>
-
-    <script>
-        let menuBtn = document.getElementsByClassName('icon-menu')[0].getElementsByTagName("I")[0];
-        let menu = document.getElementsByClassName('drop')[0];
-        
-        menuBtn.addEventListener("click", (e) => {
-            if (menuBtn.classList.contains('fa-bars')) {
-                menuBtn.classList.remove('fa-bars');
-                menuBtn.classList.add('fa-times');
-
-                menu.classList.remove('non-active');
-                menu.classList.add('active');
-            }
-            else {
-                menuBtn.classList.add('fa-bars');
-                menuBtn.classList.remove('fa-times');
-
-                menu.classList.remove('active');
-                menu.classList.add('non-active');
-            }
-        });
-
-    </script>
-</body>
-</html>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio quo fugiat corrupti pariatur, explicabo nemo perspiciatis sunt voluptatibus quae quos sed optio? Repudiandae aliquam, quasi corporis exercitationem molestiae quisquam cum!</p>
+            <section class="button-controls">
+                <button class="btn"><a href="./edit.html">
+                    Edit
+                </a></button>
+                <button class="btn"><a href="#">
+                    Delete
+                </a></button>
+            </section>
+        </div>
+    </section>
+    <section class="project-comments-section">
+        <form action="#" method="post">
+            <label for="comment">Add a comment</label>
+            <textarea name="comment" id="comment-text" rows="2"></textarea>
+            <input type="submit" value="Submit comment" class="btn">
+        </form>
+        <article class="comment">
+            <p class="comment-name">
+                John Smith
+            </p>
+            <p class="comment-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
+            </p>
+        </article>
+        <article class="comment">
+            <p class="comment-name">
+                John Smith
+            </p>
+            <p class="comment-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
+            </p>
+        </article>
+        <article class="comment">
+            <p class="comment-name">
+                John Smith
+            </p>
+            <p class="comment-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
+            </p>
+        </article>
+    </section>
+{% endblock %}

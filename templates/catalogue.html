@@ -1,149 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porject Demo</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="./home_page.html">Home</a></li>
-            </ul>
+{% extends 'shared/base.html' %}
 
-            <ul class="dropdown-menu">
-                <li><button class="icon-menu"><i class="fas fa-bars"></i></button>
-                <li><ul class="drop non-active">
-                    <li><a href="./catalogue.html">Catalogue</a></li>
-                    <li><a href="./add.html">Add project</a></li>
-                    <li><a href="./login.html">Login</a></li>
-                    <li><a href="./profile.html">Profile</a></li>
-                </ul></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="category-ribbon">
-            <a href="#">All</a>
-            <button class="btn"><a href="#">Interior designers</a></button>
-            <button class="btn"><a href="#">Product designers</a></button>
-            <button class="btn"><a href="#">Visualizers</a></button>
-            <button class="btn"><a href="#">Other</a></button>
-        </section>
+{% block content %}
+    <section class="category-ribbon">
+        <a href="#">All</a>
+        <button class="btn"><a href="#">Interior designers</a></button>
+        <button class="btn"><a href="#">Product designers</a></button>
+        <button class="btn"><a href="#">Visualizers</a></button>
+        <button class="btn"><a href="#">Other</a></button>
+    </section>
 
-        <section class="project-list">
-            <article class="project-card">
-                <div class="project-card-image"><img src="./static/images/pexels-vecislavas-popa-1571460.jpg" alt="project image"></div>
-                <div class="project-card-details">
-                    <h3 class="project-card-title">
-                        Project title
-                    </h3>
-                    <p class="project-card-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    </p>
-                    <button class="btn"><a href="#">
-                        See details
-                    </a></button>
-                </div>
-            </article>
-            <article class="project-card">
-                <div class="project-card-image"><img src="./static/images/pexels-victoria-borodinova-3315291.jpg" alt="project image"></div>
-                <div class="project-card-details">
-                    <h3 class="project-card-title">
-                        Project title
-                    </h3>
-                    <p class="project-card-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    </p>
-                    <button class="btn"><a href="#">
-                        See details
-                    </a></button>
-                </div>
-            </article>
-            <article class="project-card">
-                <div class="project-card-image"><img src="./static/images/pexels-pixabay-266688.jpg" alt="project image"></div>
-                <div class="project-card-details">
-                    <h3 class="project-card-title">
-                        Project title
-                    </h3>
-                    <p class="project-card-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    </p>
-                    <button class="btn"><a href="#">
-                        See details
-                    </a></button>
-                </div>
-            </article>
-            <article class="project-card">
-                <div class="project-card-image"><img src="./static/images/pexels-dmitry-zvolskiy-2082087.jpg" alt="project image"></div>
-                <div class="project-card-details">
-                    <h3 class="project-card-title">
-                        Project title
-                    </h3>
-                    <p class="project-card-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    </p>
-                    <button class="btn"><a href="#">
-                        See details
-                    </a></button>
-                </div>
-            </article>
-            <article class="project-card">
-                <div class="project-card-image">
-                    <img src="./static/images/pexels-colour-creation-112811.jpg" alt="project image">
-                </div>
-                <div class="project-card-details">
-                    <h3 class="project-card-title">
-                        Project title
-                    </h3>
-                    <p class="project-card-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    </p>
-                    <button class="btn"><a href="#">
-                        See details
-                    </a></button>
-                </div>
-            </article>
-        </section>
-    </main>
-    <hr>
-    <footer>
-        <p>
-            &copy; SoftUni.bg | Liliya Ignatova
-        </p>
-        <ul>
-            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fab fa-github-square"></i></a></li>
-        </ul>
-    </footer>
-
-    <script>
-        let menuBtn = document.getElementsByClassName('icon-menu')[0].getElementsByTagName("I")[0];
-        let menu = document.getElementsByClassName('drop')[0];
-        
-        menuBtn.addEventListener("click", (e) => {
-            if (menuBtn.classList.contains('fa-bars')) {
-                menuBtn.classList.remove('fa-bars');
-                menuBtn.classList.add('fa-times');
-
-                menu.classList.remove('non-active');
-                menu.classList.add('active');
-            }
-            else {
-                menuBtn.classList.add('fa-bars');
-                menuBtn.classList.remove('fa-times');
-
-                menu.classList.remove('active');
-                menu.classList.add('non-active');
-            }
-        });
-
-    </script>
-</body>
-</html>
+    <section class="project-list">
+        <article class="project-card">
+            <div class="project-card-image"><img src="./static/images/pexels-vecislavas-popa-1571460.jpg" alt="project image"></div>
+            <div class="project-card-details">
+                <h3 class="project-card-title">
+                    Project title
+                </h3>
+                <p class="project-card-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <button class="btn"><a href="#">
+                    See details
+                </a></button>
+            </div>
+        </article>
+        <article class="project-card">
+            <div class="project-card-image"><img src="./static/images/pexels-victoria-borodinova-3315291.jpg" alt="project image"></div>
+            <div class="project-card-details">
+                <h3 class="project-card-title">
+                    Project title
+                </h3>
+                <p class="project-card-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <button class="btn"><a href="#">
+                    See details
+                </a></button>
+            </div>
+        </article>
+        <article class="project-card">
+            <div class="project-card-image"><img src="./static/images/pexels-pixabay-266688.jpg" alt="project image"></div>
+            <div class="project-card-details">
+                <h3 class="project-card-title">
+                    Project title
+                </h3>
+                <p class="project-card-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <button class="btn"><a href="#">
+                    See details
+                </a></button>
+            </div>
+        </article>
+        <article class="project-card">
+            <div class="project-card-image"><img src="./static/images/pexels-dmitry-zvolskiy-2082087.jpg" alt="project image"></div>
+            <div class="project-card-details">
+                <h3 class="project-card-title">
+                    Project title
+                </h3>
+                <p class="project-card-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <button class="btn"><a href="#">
+                    See details
+                </a></button>
+            </div>
+        </article>
+        <article class="project-card">
+            <div class="project-card-image">
+                <img src="./static/images/pexels-colour-creation-112811.jpg" alt="project image">
+            </div>
+            <div class="project-card-details">
+                <h3 class="project-card-title">
+                    Project title
+                </h3>
+                <p class="project-card-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <button class="btn"><a href="#">
+                    See details
+                </a></button>
+            </div>
+        </article>
+    </section>
+{% endblock %}
