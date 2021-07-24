@@ -3,18 +3,18 @@
 {% block content %}
     <section class="project-details">
         <div class="project-details-image">
-            <img src="./static/images/pexels-vecislavas-popa-1571460.jpg" alt="project image">
+            <img src="{{ design.image.url }}" alt="project image">
         </div>
         <div class="project-details-info">
             <h3 class="project-details-title">
-                Project title
+                {{ design.title }}
             </h3>
             <ul>
                 <li>Creator: <a href="#">John Smith</a></li>
-                <li>Location: Sofia, Bulgaria</li>
-                <li>Likes: 20 <button type="submit" class="like-btn"><i class="far fa-heart"></i><i class="fas fa-heart" style="display: none;"></i></button></li>
+                <li>Location: {{ design.city }}, {{ design.country }}</li>
+                <li>Likes: {{ likes }} <button type="submit" class="like-btn"><i class="far fa-heart"></i><i class="fas fa-heart" style="display: none;"></i></button></li>
             </ul>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio quo fugiat corrupti pariatur, explicabo nemo perspiciatis sunt voluptatibus quae quos sed optio? Repudiandae aliquam, quasi corporis exercitationem molestiae quisquam cum!</p>
+            <p>{{ design.description }}</p>
             <section class="button-controls">
                 <button class="btn"><a href="./edit.html">
                     Edit
@@ -26,34 +26,35 @@
         </div>
     </section>
     <section class="project-comments-section">
+        <h2 style="margin:0;">Comments</h2>
+        <article class="comment">
+            <p class="comment-name">
+                John Smith
+            </p>
+            <p class="comment-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
+            </p>
+        </article>
+        <article class="comment">
+            <p class="comment-name">
+                John Smith
+            </p>
+            <p class="comment-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
+            </p>
+        </article>
+        <article class="comment">
+            <p class="comment-name">
+                John Smith
+            </p>
+            <p class="comment-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
+            </p>
+        </article>
         <form action="#" method="post">
             <label for="comment">Add a comment</label>
             <textarea name="comment" id="comment-text" rows="2"></textarea>
             <input type="submit" value="Submit comment" class="btn">
         </form>
-        <article class="comment">
-            <p class="comment-name">
-                John Smith
-            </p>
-            <p class="comment-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
-            </p>
-        </article>
-        <article class="comment">
-            <p class="comment-name">
-                John Smith
-            </p>
-            <p class="comment-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
-            </p>
-        </article>
-        <article class="comment">
-            <p class="comment-name">
-                John Smith
-            </p>
-            <p class="comment-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, asperiores.
-            </p>
-        </article>
     </section>
 {% endblock %}
