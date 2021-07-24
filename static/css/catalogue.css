@@ -45,7 +45,7 @@
     padding: 10px;
 }
 
-.project-card-description {
+p.project-card-description {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;

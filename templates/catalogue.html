@@ -2,15 +2,15 @@
 
 {% block content %}
     <section class="category-ribbon">
-        <a href="#">All</a>
-        <button class="btn"><a href="#">Interior design</a></button>
-        <button class="btn"><a href="#">Product design</a></button>
-        <button class="btn"><a href="#">3D models</a></button>
-        <button class="btn"><a href="#">Other</a></button>
+        <a href="{% url 'all designs' %}">All</a>
+        <button class="btn"><a href="{% url 'all designs' %}?type=interior">Interior design</a></button>
+        <button class="btn"><a href="{% url 'all designs' %}?type=product">Product design</a></button>
+        <button class="btn"><a href="{% url 'all designs' %}?type=3d">3D models</a></button>
+        <button class="btn"><a href="{% url 'all designs' %}?type=other">Other</a></button>
     </section>
 
     <section class="project-list">
-        {% if not all_designs %}
+        {% if not designs %}
             <article class="no-projects">
                 <h1>No projects published yet</h1>
             </article>
@@ -25,6 +25,9 @@
                         </h3>
                         <p class="project-card-description">
                             {{ design.description }}
+                        </p>
+                        <p>
+                            <i class="fas fa-heart"></i> {{ design.like_set.count }}
                         </p>
                         <button class="btn"><a href="#">
                             See details
