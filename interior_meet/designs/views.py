@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from interior_meet.core.utils import get_designs
-from interior_meet.designs.forms import CreateDesignForm
+from interior_meet.designs.forms import CreateDesignForm, EditDesignForm
 from interior_meet.designs.models import Design
 
 
@@ -31,6 +31,24 @@ def create_design(request):
     }
 
     return render(request, 'add.html', context)
+
+
+def edit_design(request, pk):
+    design = Design.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = EditDesignForm(request.POST, request.FILES, instance=design)
+        if form.is_valid():
+            form.save()
+            return redirect('design details', pk)
+    else:
+        form = EditDesignForm(instance=design)
+
+    context = {
+        'form': form,
+        'design': design,
+    }
+
+    return render(request, 'edit.html', context)
 
 
 def design_details(request, pk):

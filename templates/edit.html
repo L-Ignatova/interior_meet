@@ -3,17 +3,9 @@
 {% block content %}
     <section class="form">
         <h1>Edit project</h1>
-        <form action="">
-            <label for="name">Project title</label>
-            <input type="text" name="name" id="name">
-            <label for="city">Location</label>
-            <input readonly="readonly" type="text" name="city" id="city" placeholder="City, country">
-
-            <label for="intro">Short description</label>
-            <textarea type="text" name="intro" id="intro" rows="4"></textarea>
-
-            <label for="image">Upload image</label>
-            <input type="file" name="image" id="image">
+        <form method="post" action="{% url 'edit design' design.id %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
             <button type="submit" class="btn">Edit</button>
         </form>
     </section>

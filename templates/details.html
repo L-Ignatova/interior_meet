@@ -16,7 +16,7 @@
             </ul>
             <p>{{ design.description }}</p>
             <section class="button-controls">
-                <button class="btn"><a href="./edit.html">
+                <button class="btn"><a href="{% url 'edit design' design.id %}">
                     Edit
                 </a></button>
                 <button class="btn"><a href="#">

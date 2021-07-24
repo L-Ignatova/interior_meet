@@ -27,8 +27,18 @@ class CreateDesignForm(DesignForm):
 
 
 class EditDesignForm(DesignForm):
-    def save(self, commit=True):
-        db_pet = Design.objects.get(pk=self.instance.id)
-        if commit:
-            os.remove(join(settings.MEDIA_ROOT, db_pet.image.url[len('/media/'):]))
-        return super().save(commit)
+    pass
+    # def save(self, commit=True):
+    #     db_design = Design.objects.get(pk=self.instance.id)
+    #     if commit:
+    #         os.remove(join(settings.MEDIA_ROOT, db_design.image.url[len('/media/designs/'):]))
+    #     return super().save(commit)
+    #
+    # class Meta:
+    #     model = Design
+    #     fields = ('title', 'type', 'city', 'country', 'description', 'image')
+    #     labels = {
+    #         'type': 'Type of project',
+    #         'description': 'Short description',
+    #         'image': 'Attach image',
+    #     }
