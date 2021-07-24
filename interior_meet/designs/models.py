@@ -2,6 +2,23 @@ from django.db import models
 
 
 class Design(models.Model):
+    TYPE_CHOICE_INTERIOR = 'Interior design'
+    TYPE_CHOICE_PRODUCT = 'Product design'
+    TYPE_CHOICE_3D = '3D visualizations'
+    TYPE_CHOICE_OTHER = 'Other'
+
+    TYPE_CHOICES = (
+        (TYPE_CHOICE_INTERIOR, 'Interior design'),
+        (TYPE_CHOICE_PRODUCT, 'Product design'),
+        (TYPE_CHOICE_3D, '3D visualizations'),
+        (TYPE_CHOICE_OTHER, 'Other'),
+    )
+
+    type = models.CharField(
+        max_length=20,
+        choices=TYPE_CHOICES,
+        default='Other',
+    )
     title = models.CharField(
         max_length=10,
     )
