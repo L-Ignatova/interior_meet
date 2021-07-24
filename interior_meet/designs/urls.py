@@ -1,8 +1,8 @@
 from django.urls import path
 
-from interior_meet.designs.views import add_page, list_designs
+from interior_meet.designs.views import list_designs, create_design
 
 urlpatterns = [
     path('', list_designs, name='all designs'),
-    path('add/', add_page, name='add'),
+    path('create/', create_design, name='create design'),
 ]

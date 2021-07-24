@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from interior_meet.core.utils import get_designs
+from interior_meet.designs.forms import CreateDesignForm
 
 
 def list_designs(request):
@@ -14,15 +15,18 @@ def list_designs(request):
     }
     return render(request, 'catalogue.html', context)
 
-#
-# def list_designs_by_category(request, category):
-#     filtered_designs = get_designs().filter(type=category)
-#     context = {
-#         'designs': filtered_designs,
-#     }
-#     return render(request, 'catalogue.html', context)
 
+def create_design(request):
+    if request.method == 'POST':
+        form = CreateDesignForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('all designs')
+    else:
+        form = CreateDesignForm()
 
-# temporary
-def add_page(req):
-    return render(req, 'add.html')
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'add.html', context)
