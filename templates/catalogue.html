@@ -10,77 +10,91 @@
     </section>
 
     <section class="project-list">
-        <article class="project-card">
-            <div class="project-card-image"><img src="./static/images/pexels-vecislavas-popa-1571460.jpg" alt="project image"></div>
-            <div class="project-card-details">
-                <h3 class="project-card-title">
-                    Project title
-                </h3>
-                <p class="project-card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <button class="btn"><a href="#">
-                    See details
-                </a></button>
-            </div>
-        </article>
-        <article class="project-card">
-            <div class="project-card-image"><img src="./static/images/pexels-victoria-borodinova-3315291.jpg" alt="project image"></div>
-            <div class="project-card-details">
-                <h3 class="project-card-title">
-                    Project title
-                </h3>
-                <p class="project-card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <button class="btn"><a href="#">
-                    See details
-                </a></button>
-            </div>
-        </article>
-        <article class="project-card">
-            <div class="project-card-image"><img src="./static/images/pexels-pixabay-266688.jpg" alt="project image"></div>
-            <div class="project-card-details">
-                <h3 class="project-card-title">
-                    Project title
-                </h3>
-                <p class="project-card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <button class="btn"><a href="#">
-                    See details
-                </a></button>
-            </div>
-        </article>
-        <article class="project-card">
-            <div class="project-card-image"><img src="./static/images/pexels-dmitry-zvolskiy-2082087.jpg" alt="project image"></div>
-            <div class="project-card-details">
-                <h3 class="project-card-title">
-                    Project title
-                </h3>
-                <p class="project-card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <button class="btn"><a href="#">
-                    See details
-                </a></button>
-            </div>
-        </article>
-        <article class="project-card">
-            <div class="project-card-image">
-                <img src="./static/images/pexels-colour-creation-112811.jpg" alt="project image">
-            </div>
-            <div class="project-card-details">
-                <h3 class="project-card-title">
-                    Project title
-                </h3>
-                <p class="project-card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <button class="btn"><a href="#">
-                    See details
-                </a></button>
-            </div>
-        </article>
+        {% if not all_designs %}
+            <article class="no-projects">
+                <h1>No projects published yet</h1>
+            </article>
+        {% else %}
+            {% for design in designs %}
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="{{ design.image.url }}" alt="project image"></div>
+                    <div class="project-card-details">
+                        <h3 class="project-card-title">
+                            {{ design.title }}
+                        </h3>
+                        <p class="project-card-description">
+                            {{ design.description }}
+                        </p>
+                        <button class="btn"><a href="#">
+                            See details
+                        </a></button>
+                    </div>
+                </article>
+            {% endfor %}
+        {% endif %}
+
+{#        #}
+{#        <article class="project-card">#}
+{#            <div class="project-card-image">#}
+{#                <img src="./static/images/pexels-victoria-borodinova-3315291.jpg" alt="project image"></div>#}
+{#            <div class="project-card-details">#}
+{#                <h3 class="project-card-title">#}
+{#                    Project title#}
+{#                </h3>#}
+{#                <p class="project-card-description">#}
+{#                    Lorem ipsum dolor sit amet consectetur adipisicing elit.#}
+{#                </p>#}
+{#                <button class="btn"><a href="#">#}
+{#                    See details#}
+{#                </a></button>#}
+{#            </div>#}
+{#        </article>#}
+{#        <article class="project-card">#}
+{#            <div class="project-card-image">#}
+{#                <img src="./static/images/pexels-pixabay-266688.jpg" alt="project image"></div>#}
+{#            <div class="project-card-details">#}
+{#                <h3 class="project-card-title">#}
+{#                    Project title#}
+{#                </h3>#}
+{#                <p class="project-card-description">#}
+{#                    Lorem ipsum dolor sit amet consectetur adipisicing elit.#}
+{#                </p>#}
+{#                <button class="btn"><a href="#">#}
+{#                    See details#}
+{#                </a></button>#}
+{#            </div>#}
+{#        </article>#}
+{#        <article class="project-card">#}
+{#            <div class="project-card-image">#}
+{#                <img src="./static/images/pexels-dmitry-zvolskiy-2082087.jpg" alt="project image"></div>#}
+{#            <div class="project-card-details">#}
+{#                <h3 class="project-card-title">#}
+{#                    Project title#}
+{#                </h3>#}
+{#                <p class="project-card-description">#}
+{#                    Lorem ipsum dolor sit amet consectetur adipisicing elit.#}
+{#                </p>#}
+{#                <button class="btn"><a href="#">#}
+{#                    See details#}
+{#                </a></button>#}
+{#            </div>#}
+{#        </article>#}
+{#        <article class="project-card">#}
+{#            <div class="project-card-image">#}
+{#                <img src="./static/images/pexels-colour-creation-112811.jpg" alt="project image">#}
+{#            </div>#}
+{#            <div class="project-card-details">#}
+{#                <h3 class="project-card-title">#}
+{#                    Project title#}
+{#                </h3>#}
+{#                <p class="project-card-description">#}
+{#                    Lorem ipsum dolor sit amet consectetur adipisicing elit.#}
+{#                </p>#}
+{#                <button class="btn"><a href="#">#}
+{#                    See details#}
+{#                </a></button>#}
+{#            </div>#}
+{#        </article>#}
     </section>
 {% endblock %}

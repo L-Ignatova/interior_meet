@@ -31,6 +31,8 @@ class Design(models.Model):
     description = models.TextField()
     image = models.ImageField(
         upload_to='designs',
+        null=True,
+        blank=True,
     )
 
 

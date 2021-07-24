@@ -44,3 +44,10 @@
 .project-card-details {
     padding: 10px;
 }
+
+.project-card-description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
