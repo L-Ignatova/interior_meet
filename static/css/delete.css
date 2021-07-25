@@ -1,0 +1,16 @@
+.delete {
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn.highlighted {
+    background-color: darkgray;
+    color: white;
+    border: 2px solid black;
+}
