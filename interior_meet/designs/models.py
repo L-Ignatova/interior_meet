@@ -1,3 +1,4 @@
+from django.core.validators import MinLengthValidator
 from django.db import models
 
 
@@ -28,7 +29,11 @@ class Design(models.Model):
     country = models.CharField(
         max_length=20,
     )
-    description = models.TextField()
+    description = models.TextField(
+        validators=[
+            MinLengthValidator(25)
+        ],
+    )
     image = models.ImageField(
         upload_to='designs',
         null=True,
